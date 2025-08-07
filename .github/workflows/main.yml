@@ -12,7 +12,7 @@ jobs:
     - name: Make script executable
       run: |
           chmod +x ./generate-primes.sh
-          chmod +x ./primes.sh.sh
+          chmod +x ./primes.sh
 
     - name: Echo cache key 
       run: | 
