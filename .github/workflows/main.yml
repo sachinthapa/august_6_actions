@@ -7,20 +7,31 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
-
+    
+    - name: Echo cache key 
+      run: | 
+           echo ${{ runner.os }}-primes
+    
     - name: Cache Primes
       id: cache-primes
       uses: actions/cache@v4
       with:
         path: prime-numbers
         key: ${{ runner.os }}-primes
-
-    - name: Generate Prime Numbers
+        
       if: steps.cache-primes.outputs.cache-hit != 'true'
-      run: /generate-primes.sh -d prime-numbers
+    - name: Generate Prime Numbers
+      run: |
+          echo "Got no cache hit on key" 
+          /generate-primes.sh -d prime-numbers
+      
+      if: steps.cache-date.outputs.cache-hit == 'true'
+    - name: Check for cache hit
+      run: |
+          echo "Got cache hit on key"
+          cat ~/prime-dates/example.txt
 
     - name: Use Prime Numbers
       run: /primes.sh -d prime-numbers
