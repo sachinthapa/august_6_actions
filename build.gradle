@@ -19,6 +19,9 @@ application {
 }
 
 jar {
+    manifest {
+        attributes 'Main-Class': 'demo.App'
+    }
     archiveFileName = 'demo.jar'
 }
 
