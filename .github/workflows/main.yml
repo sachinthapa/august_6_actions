@@ -1,5 +1,5 @@
 name: Caching Primes
-run-name: ${{ github.actor }} is testing out Deployement 🚀
+run-name: ${{ github.actor }} is testing out Caching 🚀
 
 on:
   push:
