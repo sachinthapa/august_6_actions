@@ -73,7 +73,7 @@ jobs:
   
   deploy-prod:
     needs: [build-and-test]
-    if: github.ref == 'refs/heads/master' 
+    if: github.ref == 'refs/heads/main' 
     
     runs-on: ubuntu-latest
     environment: 
