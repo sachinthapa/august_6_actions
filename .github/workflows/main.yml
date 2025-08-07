@@ -33,7 +33,7 @@ jobs:
           echo "Cached content prime-numbers/primes.txt generated on $(date)"
       
     - name: Check for cache hit
-      if: steps.cache-date.outputs.cache-hit == 'true'
+      if: steps.cache-primes.outputs.cache-hit == 'true'
       run: |
           echo "Got cache hit on key"
           cat ~/prime-numbers/primes.txt
