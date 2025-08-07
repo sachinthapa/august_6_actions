@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    
+    - name: Make script executable
+      run: chmod +x ./generate-primes.sh
+
     - name: Echo cache key 
       run: | 
            echo ${{ runner.os }}-primes
