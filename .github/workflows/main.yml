@@ -10,7 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Make script executable
-      run: chmod +x ./generate-primes.sh
+      run: |
+          chmod +x ./generate-primes.sh
+          chmod +x ./primes.sh.sh
 
     - name: Echo cache key 
       run: | 
