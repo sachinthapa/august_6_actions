@@ -13,7 +13,7 @@ jobs:
     - name: Echo cache key 
       run: | 
            echo ${{ runner.os }}-primes
-    
+   
     - name: Cache Primes
       id: cache-primes
       uses: actions/cache@v4
@@ -21,17 +21,18 @@ jobs:
         path: prime-numbers
         key: ${{ runner.os }}-primes
         
-      if: steps.cache-primes.outputs.cache-hit != 'true'
     - name: Generate Prime Numbers
+      if: steps.cache-primes.outputs.cache-hit != 'true'
       run: |
           echo "Got no cache hit on key" 
           /generate-primes.sh -d prime-numbers
+          echo "Cached content prime-numbers/primes.txt generated on $(date)"
       
-      if: steps.cache-date.outputs.cache-hit == 'true'
     - name: Check for cache hit
+      if: steps.cache-date.outputs.cache-hit == 'true'
       run: |
           echo "Got cache hit on key"
-          cat ~/prime-dates/example.txt
+          cat ~/prime-numbers/primes.txt
 
     - name: Use Prime Numbers
       run: /primes.sh -d prime-numbers
