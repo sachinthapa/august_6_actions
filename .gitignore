@@ -33,5 +33,6 @@ go.work.sum
 
 
 actions-runner/
-build/
-.gradle/
+.gradle
+/build/
+

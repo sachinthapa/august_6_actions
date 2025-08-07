@@ -18,6 +18,10 @@ application {
     mainClass = 'demo.App' // <5>
 }
 
+jar {
+    archiveFileName = 'demo.jar'
+}
+
 tasks.named('test') {
     useJUnitPlatform() // <6>
 }
