@@ -1,0 +1,2 @@
+sachinthapa is testing out new rules
+[![Caching Primes](https://github.com/sachinthapa/august_6_actions/actions/workflows/main.yml/badge.svg)](https://github.com/sachinthapa/august_6_actions/actions/workflows/main.yml)
