@@ -1,6 +1,9 @@
 name: DeploymentsEXm
 run-name: ${{ github.actor }} is testing out Deployement 🚀
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [ "main", "master", "dev" ]
@@ -43,6 +46,8 @@ jobs:
   deploy-dev:
     needs: [build-and-test]
     if: github.ref == 'refs/heads/dev'
+    permissions:
+      contents: write
       
     runs-on: ubuntu-latest
     environment: 
@@ -74,6 +79,8 @@ jobs:
   deploy-prod:
     needs: [build-and-test]
     if: github.ref == 'refs/heads/main' 
+    permissions:
+      contents: write
     
     runs-on: ubuntu-latest
     environment: 
