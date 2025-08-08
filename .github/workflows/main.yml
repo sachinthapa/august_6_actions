@@ -6,7 +6,7 @@ permissions:
 
 on:
   push:
-    branches: [ "cace-hit" ]
+    branches: [ "cache-hit" ]
 jobs:
   build:
     runs-on: ubuntu-latest
