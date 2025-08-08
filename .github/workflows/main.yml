@@ -27,7 +27,7 @@ jobs:
         path: prime-numbers
         key: ${{ runner.os }}-primes
         
-    - name: Generate Prime Numbers
+    - name: Generate Prime Numbers if cache not found
       if: steps.cache-primes.outputs.cache-hit != 'true'
       run: |
           echo "Got no cache hit on key" 
