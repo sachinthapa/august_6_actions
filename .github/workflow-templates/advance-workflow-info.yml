@@ -2,9 +2,9 @@ name: Repo Info with context
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ "advance-worklflow" ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ "advance-worklflow" ]
 
 jobs:
   info:
