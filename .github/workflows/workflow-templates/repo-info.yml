@@ -1,17 +1,16 @@
 name: Repo Info with context
 
 on:
-  workflow_call:
+  push:
+    branches: [ $default_branch ]
+  pull_request:
+    branches: [ $default_branch ]
 
 jobs:
   info:
-  
     runs-on: ubuntu-latest
-
-    steps:
-            
-      - uses: actions/checkout@v3
-          
+    steps:     
+      - uses: actions/checkout@v3       
       - name: Show repo info
         env: 
           GITHUB_CONTEXT: ${{ toJson(github) }}
